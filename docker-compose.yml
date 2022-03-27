@@ -10,5 +10,16 @@ services:
       - '5434:5432'
     networks:
       - nestjs-net
+
+  test-db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=nest
+    ports:
+      - '5435:5432'
+    networks:
+      - nestjs-net
 networks:
   nestjs-net:
